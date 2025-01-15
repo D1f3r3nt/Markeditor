@@ -57,7 +57,7 @@ export const ListModal = ({
                     ))
                 }
 
-                <div className='w-full flex justify-around'>
+                <div className='w-full flex justify-around mt-2'>
                     <div
                         className='cursor-pointer rounded bg-red-400 flex justify-center items-center p-2'
                         onClick={() => setValues(values.slice(0, values.length - 1))}
