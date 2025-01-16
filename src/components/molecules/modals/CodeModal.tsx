@@ -1,7 +1,7 @@
-import {ModalButtons} from "../atoms/ModalButtons.tsx";
+import {ModalButtons} from "../../atoms/ModalButtons.tsx";
 import {useContext, useState} from "react";
-import {DataContext} from "../../pages/home/DataProvider.tsx";
-import {useButtons} from "../../pages/home/model/useButtons.ts";
+import {DataContext} from "../../../pages/home/DataProvider.tsx";
+import {useButtons} from "../../../pages/home/model/useButtons.ts";
 
 export const CodeModal = () => {
 
@@ -11,6 +11,11 @@ export const CodeModal = () => {
     const { setStartLine } = useButtons(input, setInput, setModalOpen, setRequestModal)
 
     const handleSubmit = () => {
+        if (!code) {
+            // thr err
+            return
+        }
+
         const key = '```'
         const result = `${key}\n${code}\n${key}\n`
 

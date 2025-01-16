@@ -1,8 +1,9 @@
 import {Modal} from "../atoms/Modal.tsx";
 import {useContext} from "react";
 import {DataContext} from "../../pages/home/DataProvider.tsx";
-import {ListModal} from "../molecules/ListModal.tsx";
-import {CodeModal} from "../molecules/CodeModal.tsx";
+import {ListModal} from "../molecules/modals/ListModal.tsx";
+import {CodeModal} from "../molecules/modals/CodeModal.tsx";
+import {LinkModal} from "../molecules/modals/LinkModal.tsx";
 
 export const Modals = () => {
 
@@ -16,6 +17,8 @@ export const Modals = () => {
                 return <ListModal isNum={false} />
             case 'code':
                 return <CodeModal />
+            case 'link':
+                return <LinkModal />
             default:
                 return <ListModal isNum={false} />
         }
