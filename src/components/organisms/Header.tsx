@@ -70,25 +70,25 @@ export const Header = () => {
                 <IconsButton onClick={() => handleModals('listDash')}>
                     <ListDashIcon />
                 </IconsButton>
-                <IconsButton>
+                <IconsButton onClick={() => handleModals('code')}>
                     <BracketsIcon />
                 </IconsButton>
-                <IconsButton>
+                <IconsButton onClick={() => handleModals('link')}>
                     <LinkIcon />
                 </IconsButton>
                 <IconsButton onClick={handleLine}>
                     <LineIcon />
                 </IconsButton>
-                <IconsButton>
+                <IconsButton onClick={() => handleModals('table')}>
                     <TableIcon />
                 </IconsButton>
-                <IconsButton>
+                <IconsButton onClick={() => handleModals('image')}>
                     <ImageIcon />
                 </IconsButton>
-                <IconsButton>
+                <IconsButton onClick={() => handleModals('check')}>
                     <CheckIcon />
                 </IconsButton>
-                <IconsButton>
+                <IconsButton onClick={() => handleModals('tag')}>
                     <SwatchesIcon />
                 </IconsButton>
                 <IconsButton onClick={handleUppercase}>

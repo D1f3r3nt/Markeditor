@@ -2,6 +2,7 @@ import {Modal} from "../atoms/Modal.tsx";
 import {useContext} from "react";
 import {DataContext} from "../../pages/home/DataProvider.tsx";
 import {ListModal} from "../molecules/ListModal.tsx";
+import {CodeModal} from "../molecules/CodeModal.tsx";
 
 export const Modals = () => {
 
@@ -13,6 +14,8 @@ export const Modals = () => {
                 return <ListModal isNum={true} />
             case 'listDash':
                 return <ListModal isNum={false} />
+            case 'code':
+                return <CodeModal />
             default:
                 return <ListModal isNum={false} />
         }
