@@ -22,6 +22,7 @@ import {useButtons} from "../../utils/useButtons.ts";
 import {BracketsIcon} from "../../../../icons/BracketsIcon.tsx";
 import {Modals} from "./Modals.tsx";
 import {Tooltip} from "../../../components/atoms/Tooltip.tsx";
+import {ListenerKeydown} from "../atoms/ListenerKeydown.tsx";
 
 export const Header = () => {
 
@@ -74,7 +75,6 @@ export const Header = () => {
                     </IconsButton>
                 </Tooltip>
 
-                {/*Cuidado*/}
                 <Tooltip text='Strikethrough' footer='Ctrl+S'>
                     <IconsButton onClick={handleStrikethrough}>
                         <StrikethroughIcon />
@@ -99,8 +99,7 @@ export const Header = () => {
                     </IconsButton>
                 </Tooltip>
 
-                {/*Cuidado*/}
-                <Tooltip text='Code' footer='Ctrl+C'>
+                <Tooltip text='Code' footer='Ctrl+O'>
                     <IconsButton onClick={() => handleModals('code')}>
                         <BracketsIcon />
                     </IconsButton>
@@ -118,7 +117,7 @@ export const Header = () => {
                     </IconsButton>
                 </Tooltip>
 
-                <Tooltip text='Table' footer='Ctrl+T'>
+                <Tooltip text='Table' footer='Ctrl+E'>
                     <IconsButton onClick={() => handleModals('table')}>
                         <TableIcon />
                     </IconsButton>
@@ -150,6 +149,7 @@ export const Header = () => {
             </div>
 
             <Modals />
+            <ListenerKeydown />
         </div>
     )
 }
