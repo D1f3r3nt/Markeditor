@@ -21,6 +21,7 @@ import {DataContext} from "../../DataProvider.tsx";
 import {useButtons} from "../../utils/useButtons.ts";
 import {BracketsIcon} from "../../../../icons/BracketsIcon.tsx";
 import {Modals} from "./Modals.tsx";
+import {Tooltip} from "../../../components/atoms/Tooltip.tsx";
 
 export const Header = () => {
 
@@ -43,57 +44,109 @@ export const Header = () => {
             <InputName />
 
             <div className='grid grid-rows-2 grid-flow-col gap-2'>
-                <IconsButton onClick={handleHeaderOne}>
-                    <HOneIcon />
-                </IconsButton>
-                <IconsButton onClick={handleItalic}>
-                    <ItalicIcon />
-                </IconsButton>
-                <IconsButton onClick={handleHeaderTwo}>
-                    <HTwoIcon />
-                </IconsButton>
-                <IconsButton onClick={handleBold}>
-                    <BoldIcon />
-                </IconsButton>
-                <IconsButton onClick={handleHeaderThree}>
-                    <HThreeIcon />
-                </IconsButton>
-                <IconsButton onClick={handleStrikethrough}>
-                    <StrikethroughIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('listNum')}>
-                    <ListNumbersIcon />
-                </IconsButton>
-                <IconsButton onClick={handleBlockquote}>
-                    <TerminalIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('listDash')}>
-                    <ListDashIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('code')}>
-                    <BracketsIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('link')}>
-                    <LinkIcon />
-                </IconsButton>
-                <IconsButton onClick={handleLine}>
-                    <LineIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('table')}>
-                    <TableIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('image')}>
-                    <ImageIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('check')}>
-                    <CheckIcon />
-                </IconsButton>
-                <IconsButton onClick={() => handleModals('tag')}>
-                    <SwatchesIcon />
-                </IconsButton>
-                <IconsButton onClick={handleUppercase}>
-                    <UpperIcon />
-                </IconsButton>
+                <Tooltip text='Header' footer='Ctrl+H'>
+                    <IconsButton onClick={handleHeaderOne}>
+                        <HOneIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Italic' footer='Ctrl+I'>
+                    <IconsButton onClick={handleItalic}>
+                        <ItalicIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Subheader' footer='Ctrl+J'>
+                    <IconsButton onClick={handleHeaderTwo}>
+                        <HTwoIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Bold' footer='Ctrl+B'>
+                    <IconsButton onClick={handleBold}>
+                        <BoldIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Title' footer='Ctrl+K'>
+                    <IconsButton onClick={handleHeaderThree}>
+                        <HThreeIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                {/*Cuidado*/}
+                <Tooltip text='Strikethrough' footer='Ctrl+S'>
+                    <IconsButton onClick={handleStrikethrough}>
+                        <StrikethroughIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Number list' footer='Ctrl+L'>
+                    <IconsButton onClick={() => handleModals('listNum')}>
+                        <ListNumbersIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Blockquote' footer='Ctrl+Q'>
+                    <IconsButton onClick={handleBlockquote}>
+                        <TerminalIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Dash list' footer='Ctrl+D'>
+                    <IconsButton onClick={() => handleModals('listDash')}>
+                        <ListDashIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                {/*Cuidado*/}
+                <Tooltip text='Code' footer='Ctrl+C'>
+                    <IconsButton onClick={() => handleModals('code')}>
+                        <BracketsIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Link' footer='Ctrl+Y'>
+                    <IconsButton onClick={() => handleModals('link')}>
+                        <LinkIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Line' footer='Ctrl+R'>
+                    <IconsButton onClick={handleLine}>
+                        <LineIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Table' footer='Ctrl+T'>
+                    <IconsButton onClick={() => handleModals('table')}>
+                        <TableIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Image' footer='Ctrl+M'>
+                    <IconsButton onClick={() => handleModals('image')}>
+                        <ImageIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Check list' footer='Ctrl+P'>
+                    <IconsButton onClick={() => handleModals('check')}>
+                        <CheckIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Add description' footer='Ctrl+F'>
+                    <IconsButton onClick={() => handleModals('tag')}>
+                        <SwatchesIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Uppercase' footer='Ctrl+U'>
+                    <IconsButton onClick={handleUppercase}>
+                        <UpperIcon />
+                    </IconsButton>
+                </Tooltip>
             </div>
 
             <Modals />
