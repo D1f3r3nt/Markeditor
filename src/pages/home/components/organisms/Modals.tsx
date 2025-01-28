@@ -1,6 +1,6 @@
 import {Modal} from "../atoms/Modal.tsx";
 import {useContext} from "react";
-import {DataContext} from "../../pages/home/DataProvider.tsx";
+import {DataContext} from "../../DataProvider.tsx";
 import {ListModal} from "../molecules/modals/ListModal.tsx";
 import {CodeModal} from "../molecules/modals/CodeModal.tsx";
 import {LinkModal} from "../molecules/modals/LinkModal.tsx";

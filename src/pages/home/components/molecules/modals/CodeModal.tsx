@@ -1,7 +1,7 @@
 import {ModalButtons} from "../../atoms/ModalButtons.tsx";
 import {useContext, useState} from "react";
-import {DataContext} from "../../../pages/home/DataProvider.tsx";
-import {useButtons} from "../../../pages/home/model/useButtons.ts";
+import {DataContext} from "../../../DataProvider.tsx";
+import {useButtons} from "../../../utils/useButtons.ts";
 
 export const CodeModal = () => {
 

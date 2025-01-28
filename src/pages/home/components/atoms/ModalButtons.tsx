@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {DataContext} from "../../pages/home/DataProvider.tsx";
+import {DataContext} from "../../DataProvider.tsx";
 
 interface ModalButtonsProps {
     handleSubmit: () => void;

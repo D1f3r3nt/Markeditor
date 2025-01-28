@@ -1,7 +1,7 @@
-import {CopyIcon} from "../../icons/CopyIcon.tsx";
+import {CopyIcon} from "../../../../icons/CopyIcon.tsx";
 import {useContext, useState} from "react";
-import {DataContext} from "../../pages/home/DataProvider.tsx";
-import {CorrectIcon} from "../../icons/CorrectIcon.tsx";
+import {DataContext} from "../../DataProvider.tsx";
+import {CorrectIcon} from "../../../../icons/CorrectIcon.tsx";
 
 export const EditorSide = () => {
 
