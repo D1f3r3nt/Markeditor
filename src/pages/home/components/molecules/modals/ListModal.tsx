@@ -6,11 +6,11 @@ import {CrossIcon} from "../../../../../icons/CrossIcon.tsx";
 import {AddIcon} from "../../../../../icons/AddIcon.tsx";
 
 interface ListModalProps {
-    isNum: boolean
+    isNum?: boolean
 }
 
 export const ListModal = ({
-    isNum = true
+    isNum = false
 }: ListModalProps) => {
 
     const [values, setValues] = useState<string[]>(['Example 1', 'Example 2'])
@@ -36,7 +36,22 @@ export const ListModal = ({
 
     return (
         <>
-            <div className='h-[300px] w-[250px] flex-col flex gap-y-1 overflow-y-scroll'>
+            <div className='h-[300px] w-[250px] flex-col flex gap-y-1 overflow-y-scroll mb-2'>
+                <div className='w-full flex justify-around mb-2'>
+                    <div
+                        className='cursor-pointer rounded bg-red-400 flex justify-center items-center p-2'
+                        onClick={() => setValues(values.slice(0, values.length - 1))}
+                    >
+                        <CrossIcon />
+                    </div>
+                    <div
+                        className='cursor-pointer rounded bg-green-400 flex justify-center items-center p-2'
+                        onClick={() => setValues([...values, ''])}
+                    >
+                        <AddIcon />
+                    </div>
+                </div>
+
                 {
                     values.map((value, index) => (
                         <div className='flex flex-row gap-x-2 items-center' key={index}>
@@ -56,23 +71,8 @@ export const ListModal = ({
                         </div>
                     ))
                 }
-
-                <div className='w-full flex justify-around mt-2'>
-                    <div
-                        className='cursor-pointer rounded bg-red-400 flex justify-center items-center p-2'
-                        onClick={() => setValues(values.slice(0, values.length - 1))}
-                    >
-                        <CrossIcon/>
-                    </div>
-                    <div
-                        className='cursor-pointer rounded bg-green-400 flex justify-center items-center p-2'
-                        onClick={() => setValues([...values, ''])}
-                    >
-                        <AddIcon/>
-                    </div>
-                </div>
             </div>
-            <ModalButtons handleSubmit={isNum ? handleSubmitNum : handleSubmitDash} />
+            <ModalButtons handleSubmit={isNum ? handleSubmitNum : handleSubmitDash}/>
         </>
     )
 }

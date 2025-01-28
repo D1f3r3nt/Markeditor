@@ -4,6 +4,7 @@ import {DataContext} from "../../DataProvider.tsx";
 import {ListModal} from "../molecules/modals/ListModal.tsx";
 import {CodeModal} from "../molecules/modals/CodeModal.tsx";
 import {LinkModal} from "../molecules/modals/LinkModal.tsx";
+import {TaskModal} from "../molecules/modals/TaskModal.tsx";
 
 export const Modals = () => {
 
@@ -12,15 +13,19 @@ export const Modals = () => {
     const getModal = () => {
         switch (requestModal?.type) {
             case 'listNum':
-                return <ListModal isNum={true} />
+                return <ListModal isNum />
             case 'listDash':
-                return <ListModal isNum={false} />
+                return <ListModal />
             case 'code':
                 return <CodeModal />
             case 'link':
                 return <LinkModal />
+            case 'image':
+                return <LinkModal isImage />
+            case 'check':
+                return <TaskModal />
             default:
-                return <ListModal isNum={false} />
+                return <ListModal />
         }
     }
 
