@@ -8,6 +8,8 @@ interface DataContextProps {
     setModalOpen: (value: boolean) => void;
     requestModal?: RequestModal;
     setRequestModal: (value: RequestModal | undefined) => void;
+    footnote: number;
+    setFootnote: (value: number) => void;
 }
 
 export const DataContext = createContext({
@@ -16,7 +18,9 @@ export const DataContext = createContext({
     modalOpen: false,
     setModalOpen: (_: boolean) => {},
     requestModal: undefined,
-    setRequestModal: (_: RequestModal) => {}
+    setRequestModal: (_: RequestModal) => {},
+    footnote: 1,
+    setFootnote: (_: number) => {},
 } as DataContextProps);
 
 interface DataProviderProps {
@@ -28,6 +32,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     const [input, setInput] = useState('')
     const [modalOpen, setModalOpen] = useState(false)
     const [requestModal, setRequestModal] = useState<RequestModal>()
+    const [footnote, setFootnote] = useState(1)
 
     const value = useMemo(() => (
         {
@@ -36,9 +41,11 @@ export const DataProvider = ({ children }: DataProviderProps) => {
             modalOpen,
             setModalOpen,
             requestModal,
-            setRequestModal
+            setRequestModal,
+            footnote,
+            setFootnote
         }
-    ), [input, setInput, modalOpen, setModalOpen, requestModal, setRequestModal])
+    ), [input, setInput, modalOpen, setModalOpen, requestModal, setRequestModal, footnote, setFootnote])
 
     return (
         <DataContext.Provider value={value}>

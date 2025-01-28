@@ -5,6 +5,7 @@ import {ListModal} from "../molecules/modals/ListModal.tsx";
 import {CodeModal} from "../molecules/modals/CodeModal.tsx";
 import {LinkModal} from "../molecules/modals/LinkModal.tsx";
 import {TaskModal} from "../molecules/modals/TaskModal.tsx";
+import {DescriptionModal} from "../molecules/modals/DescriptionModal.tsx";
 
 export const Modals = () => {
 
@@ -24,6 +25,8 @@ export const Modals = () => {
                 return <LinkModal isImage />
             case 'check':
                 return <TaskModal />
+            case 'tag':
+                return <DescriptionModal />
             default:
                 return <ListModal />
         }
