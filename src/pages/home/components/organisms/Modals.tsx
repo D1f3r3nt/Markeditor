@@ -6,6 +6,7 @@ import {CodeModal} from "../molecules/modals/CodeModal.tsx";
 import {LinkModal} from "../molecules/modals/LinkModal.tsx";
 import {TaskModal} from "../molecules/modals/TaskModal.tsx";
 import {DescriptionModal} from "../molecules/modals/DescriptionModal.tsx";
+import {TableModal} from "../molecules/modals/TableModal.tsx";
 
 export const Modals = () => {
 
@@ -27,6 +28,8 @@ export const Modals = () => {
                 return <TaskModal />
             case 'tag':
                 return <DescriptionModal />
+            case 'table':
+                return <TableModal />
             default:
                 return <ListModal />
         }

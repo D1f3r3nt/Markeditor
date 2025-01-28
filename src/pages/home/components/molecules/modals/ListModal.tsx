@@ -2,8 +2,7 @@ import {useContext, useState} from "react";
 import {ModalButtons} from "../../atoms/ModalButtons.tsx";
 import {DataContext} from "../../../DataProvider.tsx";
 import {useButtons} from "../../../utils/useButtons.ts";
-import {CrossIcon} from "../../../../../icons/CrossIcon.tsx";
-import {AddIcon} from "../../../../../icons/AddIcon.tsx";
+import {PrincipalButton} from "../../atoms/PrincipalButton.tsx";
 
 interface ListModalProps {
     isNum?: boolean
@@ -38,18 +37,18 @@ export const ListModal = ({
         <>
             <div className='h-[300px] w-[250px] flex-col flex gap-y-1 overflow-y-scroll mb-2'>
                 <div className='w-full flex justify-around mb-2'>
-                    <div
-                        className='cursor-pointer rounded bg-red-400 flex justify-center items-center p-2'
+                    <PrincipalButton
+                        className='bg-gray-200'
                         onClick={() => setValues(values.slice(0, values.length - 1))}
                     >
-                        <CrossIcon />
-                    </div>
-                    <div
-                        className='cursor-pointer rounded bg-green-400 flex justify-center items-center p-2'
+                        Remove Column
+                    </PrincipalButton>
+                    <PrincipalButton
+                        className='bg-[#242424] text-[#FFFFFFED]'
                         onClick={() => setValues([...values, ''])}
                     >
-                        <AddIcon />
-                    </div>
+                        Add Column
+                    </PrincipalButton>
                 </div>
 
                 {
