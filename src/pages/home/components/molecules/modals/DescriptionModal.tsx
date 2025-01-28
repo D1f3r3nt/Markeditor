@@ -8,8 +8,20 @@ export const DescriptionModal = () => {
     const [label, setLabel] = useState<string>()
     const [description, setDescription] = useState<string>()
 
-    const { requestModal, input, setInput, setModalOpen, setRequestModal, setFootnote, footnote } = useContext(DataContext)
+    const { requestModal, input, setInput, setModalOpen, setRequestModal } = useContext(DataContext)
     const { setStartLine } = useButtons(input, setInput, setModalOpen, setRequestModal)
+
+    const countFootnote = () => {
+        const matches = input.match(/\[\^(\d+)\]/g)
+
+        if (matches === null) {
+            return 1
+        }
+
+        const lastNumber = matches[matches.length - 1].split('[^')[1].split(']')[0]
+
+        return +lastNumber + 1;
+    }
 
     const handleSubmitDescription = () => {
         if (!label || !description) {
@@ -17,9 +29,10 @@ export const DescriptionModal = () => {
             return
         }
 
+        const footnote = countFootnote()
+
         const result = `${label} [^${footnote}] \n\n [^${footnote}]: ${description}`
         setInput(setStartLine(requestModal?.cursor ?? 0, result))
-        setFootnote(footnote + 1)
     }
 
     return (
