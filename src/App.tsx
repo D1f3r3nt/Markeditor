@@ -13,7 +13,7 @@ export function App() {
           vertical: 'bottom',
           horizontal: 'right',
         }}
-        autoHideDuration={1000}
+        autoHideDuration={2000}
       >
         <Home />
       </SnackbarProvider>
