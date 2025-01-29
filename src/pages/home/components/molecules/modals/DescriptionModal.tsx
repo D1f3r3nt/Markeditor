@@ -2,6 +2,7 @@ import {ModalButtons} from "../../atoms/ModalButtons.tsx";
 import {useContext, useState} from "react";
 import {DataContext} from "../../../DataProvider.tsx";
 import {useButtons} from "../../../utils/useButtons.ts";
+import {useSnackbar} from "notistack";
 
 export const DescriptionModal = () => {
 
@@ -10,6 +11,8 @@ export const DescriptionModal = () => {
 
     const { requestModal, input, setInput, setModalOpen, setRequestModal } = useContext(DataContext)
     const { setStartLine } = useButtons(input, setInput, setModalOpen, setRequestModal)
+
+    const { enqueueSnackbar } = useSnackbar();
 
     const countFootnote = () => {
         const matches = input.match(/\[\^(\d+)\]/g)
@@ -25,7 +28,11 @@ export const DescriptionModal = () => {
 
     const handleSubmitDescription = () => {
         if (!label || !description) {
-            // thr err
+            enqueueSnackbar('You must set "label" and "description"', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
             return
         }
 

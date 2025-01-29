@@ -1,4 +1,5 @@
 import {RequestModal, TypeModal} from "../../../models/RequestModal.ts";
+import {useSnackbar} from "notistack";
 
 export const useButtons = (
     input: string,
@@ -6,6 +7,8 @@ export const useButtons = (
     setModalOpen: (_: boolean) => void,
     setRequestModal: (_: RequestModal) => void
 ) => {
+
+    const { enqueueSnackbar } = useSnackbar();
 
     const getCursorPosition = () => {
         // @ts-ignore
@@ -85,8 +88,11 @@ export const useButtons = (
         if (start !== undefined && end !== undefined) {
             setInput(setBorderSelection(start, end, key))
         } else {
-            console.error('No selection')
-            // throw err
+            enqueueSnackbar('No selection, please select something', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
         }
     }
 
@@ -97,8 +103,11 @@ export const useButtons = (
         if (start !== undefined && end !== undefined) {
             setInput(setBorderSelection(start, end, key))
         } else {
-            console.error('No selection')
-            // throw err
+            enqueueSnackbar('No selection, please select something', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
         }
     }
 
@@ -109,8 +118,11 @@ export const useButtons = (
         if (start !== undefined && end !== undefined) {
             setInput(setBorderSelection(start, end, key))
         } else {
-            console.error('No selection')
-            // throw err
+            enqueueSnackbar('No selection, please select something', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
         }
     }
 
@@ -132,7 +144,11 @@ export const useButtons = (
         if (start) {
             setInput(setStartLine(start, key))
         } else {
-            // thr err
+            enqueueSnackbar('No selection, please select something', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
         }
     }
 
@@ -146,8 +162,11 @@ export const useButtons = (
 
             setInput(firstSection + higlighSection + finalSection)
         } else {
-            console.error('No selection')
-            // throw err
+            enqueueSnackbar('No selection, please select something', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
         }
     }
 

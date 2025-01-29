@@ -2,6 +2,7 @@ import {ModalButtons} from "../../atoms/ModalButtons.tsx";
 import {useContext, useState} from "react";
 import {DataContext} from "../../../DataProvider.tsx";
 import {useButtons} from "../../../utils/useButtons.ts";
+import {useSnackbar} from "notistack";
 
 export const CodeModal = () => {
 
@@ -9,10 +10,15 @@ export const CodeModal = () => {
 
     const { requestModal, input, setInput, setModalOpen, setRequestModal } = useContext(DataContext)
     const { setStartLine } = useButtons(input, setInput, setModalOpen, setRequestModal)
+    const { enqueueSnackbar } = useSnackbar();
 
     const handleSubmit = () => {
         if (!code) {
-            // thr err
+            enqueueSnackbar('You must set a code', {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
+                type: 'error',
+            })
             return
         }
 
