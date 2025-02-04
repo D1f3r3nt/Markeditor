@@ -3,4 +3,4 @@ export interface RequestModal {
     cursor: number;
 }
 
-export type TypeModal = 'listNum' | 'listDash' | 'code' | 'image' | 'table' | 'link' | 'check' | 'tag';
+export type TypeModal = 'listNum' | 'listDash' | 'code' | 'image' | 'table' | 'link' | 'check' | 'tag' | 'badget';

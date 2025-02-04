@@ -23,6 +23,7 @@ import {BracketsIcon} from "../../../../icons/BracketsIcon.tsx";
 import {Modals} from "./Modals.tsx";
 import {Tooltip} from "../../../components/atoms/Tooltip.tsx";
 import {ListenerKeydown} from "../atoms/ListenerKeydown.tsx";
+import {BadgetIcon} from "../../../../icons/BadgetIcon.tsx";
 
 export const Header = () => {
 
@@ -144,6 +145,12 @@ export const Header = () => {
                 <Tooltip text='Uppercase' footer='Ctrl+U'>
                     <IconsButton onClick={handleUppercase}>
                         <UpperIcon />
+                    </IconsButton>
+                </Tooltip>
+
+                <Tooltip text='Custom bagdet' footer='Ctrl+G'>
+                    <IconsButton onClick={() => handleModals('badget')}>
+                        <BadgetIcon />
                     </IconsButton>
                 </Tooltip>
             </div>

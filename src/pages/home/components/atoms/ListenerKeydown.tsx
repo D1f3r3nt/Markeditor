@@ -87,5 +87,9 @@ export const ListenerKeydown = () => {
         handleUppercase();
     }, ['u']);
 
+    useKeyDown(() => {
+        handleModals('badget')
+    }, ['g']);
+
     return <></>
 }

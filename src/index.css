@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    font-family: system-ui;
+}
+
 body {
     background-color: #242424;
     color: #FFFFFFED;
