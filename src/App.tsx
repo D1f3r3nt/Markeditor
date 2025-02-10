@@ -16,6 +16,7 @@ export function App() {
         autoHideDuration={2000}
       >
         <Home />
+        <base target="_blank" />
       </SnackbarProvider>
   )
 }
