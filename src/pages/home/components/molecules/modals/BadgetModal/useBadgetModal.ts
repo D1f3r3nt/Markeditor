@@ -73,7 +73,7 @@ export const useBadgetModal = () => {
             result += `&labelColor=${labelColor.toUpperCase().replace('#', '')}`
         }
 
-        if (logo !== '') {
+        if (logo.trim() !== '') {
             result += `&logo=${format(logo)}&logoColor=${logoColor.toUpperCase().replace('#', '')}`
         }
 

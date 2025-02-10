@@ -46,7 +46,7 @@ export const BadgetModal =  () => {
     const handleSubmitBadget = () => {
         let value = `![Custom badget](https://img.shields.io/badge/${result})`
 
-        if (link !== '') {
+        if (link.trim() !== '') {
             value = `[${value}](${link})`
         }
 

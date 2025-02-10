@@ -8,6 +8,7 @@ import {TaskModal} from "../molecules/modals/TaskModal.tsx";
 import {DescriptionModal} from "../molecules/modals/DescriptionModal.tsx";
 import {TableModal} from "../molecules/modals/TableModal.tsx";
 import {BadgetModal} from "../molecules/modals/BadgetModal/BadgetModal.tsx";
+import {StatsModal} from "../molecules/modals/StatsModal.tsx";
 
 export const Modals = () => {
 
@@ -33,6 +34,8 @@ export const Modals = () => {
                 return <TableModal />
             case 'badget':
                 return <BadgetModal />
+            case 'stats':
+                return <StatsModal />
             default:
                 return <ListModal />
         }
