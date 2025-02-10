@@ -2,7 +2,7 @@ import { GithubIcon } from "../../../../icons/GithubIcon"
 
 export const References = () => {
 
-    const githubCode = 'https://www.google.com/'
+    const githubCode = 'https://github.com/D1f3r3nt/Markeditor'
 
     return (
         <div className='flex flex-col justify-center'>
