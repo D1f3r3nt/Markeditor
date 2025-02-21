@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# 📜 Markeditor - El editor Markdown definitivo 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido a Markeditor, un potente editor Markdown diseñado para facilitar la creación de archivos README.md y otros documentos en formato Markdown. Con una interfaz intuitiva y herramientas avanzadas, Markeditor va más allá de ser un simple editor: ofrece funcionalidades que aprovechan al máximo el potencial de Markdown.
 
-Currently, two official plugins are available:
+## ✨ Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Interfaz intuitiva – Diseñada para una experiencia fluida y sin distracciones.
+- ✅ Modales interactivas – Facilitan la inserción de elementos de Markdown sin necesidad de memorizar su sintaxis.
+- ✅ Atajos de teclado – Accede rápidamente a todas las herramientas sin levantar las manos del teclado.
+- ✅ Generador de badges personalizados – Personaliza el color, texto, icono y formato de cualquier badge en tiempo real.
+- ✅ Github Stats integrado – Obtén estadísticas de GitHub con solo ingresar un nombre de usuario.
+- ✅ Vista previa en tiempo real – Observa los cambios a medida que escribes.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- ⚛️ React – Para una interfaz rápida y reactiva.
+- 🟦 TypeScript – Código más seguro y mantenible.
+- ⚡ Vite – Para un entorno de desarrollo ultrarrápido.
+- 🎨 TailwindCSS – Estilos modernos y personalizables con facilidad.
 
-- Configure the top-level `parserOptions` property like this:
+## 🤝 ¡Contribuye!
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Este proyecto es open source, y cualquier persona interesada está invitada a colaborar. Si tienes ideas, mejoras o quieres aprender más sobre cómo está construido, ¡las contribuciones son bienvenidas!
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## ⭐ Apóyanos
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Si Markeditor te resulta útil, no olvides dejar una estrella ⭐ en el repositorio. ¡Tu apoyo es importante para seguir mejorando!
